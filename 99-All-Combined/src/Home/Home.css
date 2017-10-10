@@ -1,0 +1,15 @@
+.login-option {
+    padding: 10px
+}
+
+.login-option h4 {
+    padding-bottom: 5px;
+}
+
+.login-option span {
+    padding-left: 10px
+}
+
+.login-option button {
+    width: 150px
+}
