@@ -56,7 +56,8 @@ class Home extends Component {
               </div>
 
               <div className="login-option">
-                <h4>Centralised Login (Auth0 Hosted Page)</h4>
+                <h2>Centralised Login (Auth0 Hosted Page)</h2>
+                <h4>Preferred and most Secure Method!</h4>
                 <Button type="button" bsStyle="primary" onClick={this.login.bind(this)}>Hosted Login</Button>
                 <span><a href={"https://auth0.com/docs/hosted-pages/login#about-the-hosted-login-page"}>https://auth0.com/docs/hosted-pages/login#about-the-hosted-login-page</a></span>
               </div>
