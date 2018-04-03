@@ -6,7 +6,7 @@
     "node": "8.9.x"
   },
   "scripts": {
-    "start": "cd ./04-Authorization && npm install; node server.js",
+    "start": "cd ./04-Authorization && node server.js",
     "heroku-postbuild": "cd 04-Authorization/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "cacheDirectories": [
