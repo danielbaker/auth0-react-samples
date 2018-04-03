@@ -65,7 +65,7 @@ class Header extends Component {
               )
             }
             {
-              auth.isAuthenticated() && auth.userHasScopes(['write:messages']) && (
+              auth.isAuthenticated() && auth.userHasScopes(['admin']) && (
                 <Button
                   bsStyle="primary"
                   className="btn-margin"

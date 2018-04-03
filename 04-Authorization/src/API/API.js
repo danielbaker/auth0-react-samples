@@ -79,21 +79,22 @@ class API extends Component {
               Your <code>access_token</code> has an expiry date of:{' '}
               {this.getExpiryDate()}
             </p>
-            <p>
-              <ButtonGroup>
-                <Button type="button" bsStyle="primary" onClick={this.renewToken.bind(this)}>Renew
-                  Token</Button>
-              </ButtonGroup>
-            </p>
+            <ButtonGroup>
+              <Button type="button" bsStyle="primary" onClick={this.renewToken.bind(this)} style={{marginBottom: '10px'}}>Renew
+                Token</Button>
+            </ButtonGroup>
             <ReactJson theme="flat" src={accessToken} displayDataTypes={false} collapsed={3}/>
           </Panel>
         </div>
         <div>
           <h1 className="center">Make an API Call to the Server</h1>
           <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'public')}>Ping</Button>
-          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'private')}>Call Private</Button>
-          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'identity_tokens')}>Identity Tokens</Button>
-          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'fb')}>FB Friends & Likes</Button>
+          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'private')}>Call
+            Private</Button>
+          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'identity_tokens')}>Identity
+            Tokens</Button>
+          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'fb')}>FB Friends &
+            Likes</Button>
         </div>
         <div className="token-area">
           <h4>Result</h4>

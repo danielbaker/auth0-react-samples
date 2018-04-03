@@ -1,32 +1,36 @@
-import React, { Component } from 'react';
-import { Panel, ControlLabel, Glyphicon } from 'react-bootstrap';
+import React, {Component} from 'react';
+import ReactJson from 'react-json-view'
+import {Panel, ControlLabel, Glyphicon} from 'react-bootstrap';
 import './Profile.css';
 
 class Profile extends Component {
   componentWillMount() {
-    this.setState({ profile: {} });
-    const { userProfile, getProfile } = this.props.auth;
-    if (!userProfile) {
-      getProfile((err, profile) => {
-        this.setState({ profile });
-      });
-    } else {
-      this.setState({ profile: userProfile });
-    }
+    this.setState({
+      profile: this.props.auth.userProfile || {},
+      id_token: this.props.auth.decodeToken('id_token')
+    });
+
+    this.props.auth.getProfile((err, profile) => {
+      this.setState({profile});
+    });
   }
+
   render() {
-    const { profile } = this.state;
+    const {profile, id_token} = this.state;
+
     return (
       <div className="container">
         <div className="profile-area">
-          <h1>{profile.name}</h1>
-          <Panel header="Profile">
-            <img src={profile.picture} alt="profile" />
+          <h2>JWT ID Token / Profile ({profile.name})</h2>
+          <Panel header="Profile information pulled from the ID Token. Restricted to claims granted to this application">
+            <img src={profile.picture} alt="profile"/>
             <div>
-              <ControlLabel><Glyphicon glyph="user" /> Nickname</ControlLabel>
+              <ControlLabel><Glyphicon glyph="user"/> Nickname:</ControlLabel>
               <h3>{profile.nickname}</h3>
             </div>
-            <pre>{JSON.stringify(profile, null, 2)}</pre>
+          <Panel header="">
+            <ReactJson theme="flat" src={id_token} displayDataTypes={false} collapsed={3}/>
+          </Panel>
           </Panel>
         </div>
       </div>

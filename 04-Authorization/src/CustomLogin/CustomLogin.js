@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {FormGroup, FormControl, ControlLabel, Button, Col, Form} from 'react-bootstrap';
 import {AUTH_CONFIG} from '../Auth/auth0-variables';
 
-class Login extends Component {
+class CustomLogin extends Component {
   constructor(props, context) {
     super(props, context);
     this.login = this.login.bind(this);
@@ -91,4 +91,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default CustomLogin;

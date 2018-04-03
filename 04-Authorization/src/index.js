@@ -1,11 +1,14 @@
 import ReactDOM from 'react-dom';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import { makeMainRoutes } from './routes';
+import React from 'react';
+import App from './App';
+import {BrowserRouter} from 'react-router-dom'
 
-const routes = makeMainRoutes();
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
-  routes,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
   document.getElementById('root')
 );
