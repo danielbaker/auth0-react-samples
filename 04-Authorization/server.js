@@ -1,4 +1,5 @@
 const express = require('express');
+const sslRedirect = require('heroku-ssl-redirect');
 const app = express();
 const jwt = require('express-jwt');
 const path = require('path');
@@ -14,6 +15,7 @@ if (!process.env.REACT_APP_AUTH0_DOMAIN || !process.env.REACT_APP_AUTH0_AUDIENCE
 }
 
 app.use(cors());
+app.use(sslRedirect());
 
 const checkJwt = jwt({
   // Dynamically provide a signing key based on the kid in the header and the singing keys provided by the JWKS endpoint.
