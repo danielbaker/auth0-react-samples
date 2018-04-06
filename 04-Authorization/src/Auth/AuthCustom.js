@@ -105,11 +105,11 @@ export default class AuthCustom extends Auth {
         params: {
           scope: scopes // Learn about scopes: https://auth0.com/docs/scopes
         },
-        theme: {
-          logo: 'https://s3-ap-southeast-2.amazonaws.com/steve.a0demo/logo.png',
-        },
         leeway: 30
-      }
+      },
+      theme: {
+        logo: 'https://s3-ap-southeast-2.amazonaws.com/steve.a0demo/logo.png',
+      },
     });
   }
 
