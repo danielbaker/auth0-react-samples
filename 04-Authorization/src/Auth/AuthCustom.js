@@ -19,6 +19,19 @@ export default class AuthCustom extends Auth {
     this.setScopes(this.getScopes());
   }
 
+  handleAuthentication() {
+    this.auth0.parseHash((err, authResult) => {
+      if (authResult && authResult.accessToken && authResult.idToken) {
+        this.setSession(authResult);
+        history.replace('/home');
+      } else if (err) {
+        history.replace('/home');
+        console.log(err);
+        alert(`Error: ${err.error} ${err.errorDescription}. Check the console for further details.`);
+      }
+    });
+  }
+
   // Used to start passwordless login
   loginPasswordless() {
     this.auth0.authorize({ pwdless: 'link' });

@@ -91,10 +91,6 @@ class API extends Component {
           <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'public')}>Ping</Button>
           <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'private')}>Call
             Private</Button>
-          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'identity_tokens')}>Identity
-            Tokens</Button>
-          <Button bsStyle="primary" className="btn-margin" onClick={this.getAPI.bind(this, 'fb')}>FB Friends &
-            Likes</Button>
         </div>
         <div className="token-area">
           <h4>Result</h4>

@@ -42,7 +42,7 @@ export default () => {
           )
         )}/>
         <Route path="/admin" render={(props) => (
-          !auth.isAuthenticated() || !auth.userHasScopes(['write:messages']) ? (
+          !auth.isAuthenticated() || !auth.userHasScopes(['admin']) ? (
             <Redirect to="/"/>
           ) : (
             <Admin auth={auth} {...props} />

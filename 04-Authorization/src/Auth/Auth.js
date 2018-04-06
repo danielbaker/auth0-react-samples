@@ -51,7 +51,8 @@ export default class Auth {
     // use it to set scopes in the session for the user. Otherwise
     // use the scopes as requested. If no scopes were requested,
     // set it to nothing
-    const scopes = authResult.scope || this.requestedScopes || '';
+    console.log(authResult);
+    const scopes = authResult.scope || this.getScopes() || '';
 
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);

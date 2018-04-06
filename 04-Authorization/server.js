@@ -47,7 +47,7 @@ app.get('/api/private', checkJwt, checkScopes, function(req, res) {
 });
 
 app.post('/api/admin', checkJwt, checkScopesAdmin, function(req, res) {
-  res.json({ message: "Hello from an admin endpoint! You need to be authenticated and have a scope of write:messages to see this." });
+  res.json({ message: "Hello from an admin endpoint! You need to be authenticated and have a scope of admin to see this." });
 });
 
 // All remaining requests return the React app, so it can handle routing.
