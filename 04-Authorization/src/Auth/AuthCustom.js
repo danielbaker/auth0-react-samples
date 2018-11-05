@@ -121,7 +121,7 @@ export default class AuthCustom extends Auth {
         leeway: 30
       },
       theme: {
-        logo: 'https://s3-ap-southeast-2.amazonaws.com/steve.a0demo/logo.png',
+        logo: 'https://s3-ap-southeast-2.amazonaws.com/danau.demo/logo.png',
       },
     });
   }
